@@ -1,0 +1,266 @@
+/* Neo-Brutalist Style - Because beauty is overrated. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+    --background-color: #a7dbd8; /* yellow */
+    --text-color: #FDFFFC; /* white */
+    --div-color: #fee8af; /* blue */
+    --title-color: #3a5b3c; /* green title */
+    --img-color: #b3277d; /* purple */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: #333;
+    color: #eee;
+}
+
+.btn {
+    cursor: pointer;
+    font-size: 1.2em;
+    border: 2px solid black; /* Black border */
+    transform: translateY(-5px);
+    font-family: 'Public Sans', sans-serif;
+    padding: 0.5em;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 2px 6px 0px 2px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 2px 6px 0px 2px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 6px 0px 2px rgba(0, 0, 0, 1);
+    display: inline-block; /* Ensure buttons/icons are inline */
+    margin: 10px; /* Add some margin for spacing */
+}
+
+.btn:hover {
+    transform: translateY(0px);
+    box-shadow: 2px 5px 0px 0px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 2px 5px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 5px 0px 0px rgba(0, 0, 0, 1);
+}
+
+body {
+    font-family: "IBM Plex Mono", monospace;
+    color: #333;
+    margin: 0;
+    position: relative;
+    line-height: 1.5em;
+    font-size: 15px;
+    background-color: var(--background-color);
+    background-attachment: fixed;
+    border-radius: 10px;
+}
+
+.plus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure clicks and hover events go through to elements behind */
+    z-index: -1; /* Ensure it's behind other content */
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 50 50"%3E%3Ctext x="0" y="20" font-family="Verdana" font-size="20" fill="black"%3E+%3C/text%3E%3C/svg%3E');
+    /* Define repeating background pattern with + sign */
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(6, 15.25%);
+    grid-gap: 0 1.67%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid;
+    width: 1000px;
+    max-width: calc(100% - 40px);
+    background: var(--div-color);
+    box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px;
+    border-radius: 10px;
+}
+
+.dashboard > div {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border: 2px solid;
+    grid-column: 1 / 7;
+    box-shadow: inherit;
+    border-radius: 10px;
+}
+
+.dashboard > div:last-of-type {
+    margin-bottom: 5px;
+}
+
+.table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.dashboard .title {
+    text-align: center;
+    background-color: var(--div-color);
+}
+
+.dashboard .title h2 {
+    color: var(--title-color);
+    font-size: 24px;
+}
+
+.dashboard .about-me-image {
+    grid-column: 1/4;
+    background-color: var(--img-color);
+    display: flex; /* Use flexbox to center the .image div */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.dashboard .image {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/portfolio.png');
+    background-size: cover;
+    background-position: center 5%; 
+    border-radius: 10px;
+}
+.dashboard .about-me-text h2 {
+	color: var(--title-color);
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.dashboard .about-me-text {
+    grid-column: 4/7;
+    background-color: var(--div-color);
+}
+
+.dashboard .icons {
+	grid-column: 1/2;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: center;
+    background-color: var(--div-color); /* Change the background color of the icons box */
+    padding: 10px; 
+}
+
+
+.dashboard .icon {
+    margin: 15px; /* Add margin around each icon */
+	padding-right: 10px;
+	height: 100px;
+	width: 100px;
+
+	
+}
+
+
+
+
+.dashboard .icon button i {
+    color: white; /* Set the color of the icon to white */
+	font-size: 2em;
+
+}
+
+.dashboard .icons .youtube .btn {
+    background-color: red; /* Set background color for YouTube icon */
+}
+
+.dashboard .icons .twitter .btn {
+    background-color: #1DA1F2; /* Set background color for Twitter icon */
+}
+
+.dashboard .icons .github .btn {
+    background-color: purple; /* Set background color for GitHub icon */
+}
+
+.dashboard .icons .linkedin .btn {
+    background-color: #0077B5; /* Set background color for LinkedIn icon */
+}
+
+.dashboard .emailme {
+    grid-column: 2/7;
+    background-color: var(--div-color);
+	height: 400px;
+}
+
+/* Set the color of links */
+a {
+    color: white; /* Set your desired color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Set the color of visited links */
+a:visited {
+    color: white; /* Set your desired color */
+}
+
+.emailme h2 {
+	color: var(--text-color);
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.emailme h2 {
+    color: #3a5b3c; /* Green title color */
+    font-size: 24px; /* Larger font size */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.emailme .wrapper {
+    margin-bottom: 15px; /* Space between input fields */
+}
+
+.emailme input[type="email"],
+.emailme input[type="text"],
+.emailme textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #333; /* Dark border */
+    border-radius: 5px;
+    margin-top: 5px; /* Space above input fields */
+    font-family: 'IBM Plex Mono', monospace; /* Use monospace font */
+}
+
+.emailme textarea {
+    height: 100px; /* Set height for textarea */
+}
+
+.emailme .btn {
+    cursor: pointer;
+    font-size: 1.2em;
+    border: 2px solid black; /* Black border */
+    transform: translateY(-5px);
+    font-family: 'Public Sans', sans-serif;
+    background: #e28da4; /* Pink background */
+    padding: 0.5em 1em; /* Padding */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 2px 6px 0px 2px rgba(0,0,0,1);
+    -webkit-box-shadow: 2px 6px 0px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 6px 0px 2px rgba(0,0,0,1);
+}
+
+.emailme .btn:hover {
+    background: #e28da4; /* Pink background on hover */
+    transform: translateY(0px);
+    box-shadow: 2px 5px 0px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 2px 5px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 5px 0px 0px rgba(0,0,0,1);
+}
+
+
+.cowboy {
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Maintain aspect ratio */
+    top: 0;
+    right: 300px; /* Adjust the distance from the right */
+    position: absolute;
+    background-image: url('images/cowboy.png');
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the background */
+    border-radius: 10px; /* Optional: add border radius */
+    z-index: 5;
+}
